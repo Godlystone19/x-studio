@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #77FA30;
+  --color-background: #141414;
+  --color-surface: #1C1C1C;
+  --color-charcoal: #4A4C4B;
+  --color-text-primary: #F9F9F9;
+  --color-text-secondary: #B2B2B2;
+  --color-border: #303030;
+
+  --color-primary-rgb: 119 250 48;
+  --color-background-rgb: 20 20 20;
+  --color-surface-rgb: 28 28 28;
+  --color-charcoal-rgb: 74 76 75;
+  --color-text-primary-rgb: 249 249 249;
+  --color-text-secondary-rgb: 178 178 178;
+  --color-border-rgb: 48 48 48;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+::selection {
+  background: rgb(var(--color-primary-rgb) / 28%);
+  color: var(--color-text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
